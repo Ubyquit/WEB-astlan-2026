@@ -1,0 +1,21 @@
+body {
+    background-color:antiquewhite;
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
+#titulo-principal {
+    text-align: center;
+}
+
+.img-portada {
+    text-align:center;
+}
+
+#img-portada {
+    width: 50%;
+}
+
+.articulo {
+    margin-top: 25px;
+}
