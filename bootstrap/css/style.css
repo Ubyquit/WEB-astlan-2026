@@ -45,3 +45,10 @@
     height: 250px;
     background-color: #BE0029;
 }
+
+/* Bandera de Canada */
+.color-rojo-c {
+    background-color: #D62717;
+    padding-top: 300px;
+    padding-bottom: 300px;
+}
