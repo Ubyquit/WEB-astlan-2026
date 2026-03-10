@@ -17,3 +17,11 @@ a {
 .text {
     color: #484848;
 }
+
+.badge-rojo {
+    background-color: #E60012;
+}
+
+.badge-azul {
+    background-color: #4B5CCE;
+}
