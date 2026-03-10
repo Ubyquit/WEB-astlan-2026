@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+}
+
 .icon {
     color: #E60012
 }
@@ -8,4 +12,8 @@
 
 .a:hover{
     color: #E60012;
+}
+
+.text {
+    color: #484848;
 }
