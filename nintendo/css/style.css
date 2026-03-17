@@ -25,3 +25,11 @@ a {
 .badge-azul {
     background-color: #4B5CCE;
 }
+
+.text-white {
+    color:white;
+}
+
+.text-mini {
+    size: 6px;
+}
