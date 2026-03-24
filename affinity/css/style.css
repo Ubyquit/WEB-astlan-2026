@@ -13,3 +13,15 @@
 .a-boton:hover {
     color:#000000
 }
+
+body {
+    background-color: #000000;
+}
+
+h1 {
+  font-size: 148px;
+}
+
+h2 {
+  font-size: 56px;
+}
