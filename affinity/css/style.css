@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'affinity';
+  src: url('../fonts/affinity.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'canva-sans';
+  src: url('../fonts/canva-sans-regular.otf') format('woff');
+}
+
 .bg-pistache {
     background-color: #97D969;
 }
@@ -16,12 +26,16 @@
 
 body {
     background-color: #000000;
+    font-family: 'canva-sans';
 }
 
-h1 {
-  font-size: 148px;
+
+.titulo-principal {
+    font-family: 'affinity', sans-serif;
+    font-size: 148px;
 }
 
-h2 {
-  font-size: 56px;
+.titulo-secundario {
+    font-family: 'affinity', sans-serif;
+    font-size: 56px;
 }
