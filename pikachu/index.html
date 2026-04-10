@@ -1,0 +1,167 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pikachu Experience ⚡</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #FFDE00;
+      height: 200vh;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* CARA */
+    .face {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      transition: opacity 0.5s ease;
+    }
+
+    /* OJOS */
+    .eye {
+      width: 140px;
+      height: 140px;
+      background: black;
+      border-radius: 50%;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .eye.left { left: 28%; top: 30%; }
+    .eye.right { right: 28%; top: 30%; }
+
+    .pupil {
+      width: 50px;
+      height: 50px;
+      background: white;
+      border-radius: 50%;
+    }
+
+    /* PARPADEO */
+    .blink {
+      animation: blink 5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 92%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.1); }
+    }
+
+    /* MEJILLAS */
+    .cheek {
+      width: 120px;
+      height: 120px;
+      background: #ff3b3b;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 18%;
+      transition: all 0.3s ease;
+    }
+
+    .cheek.left { left: 20%; }
+    .cheek.right { right: 20%; }
+
+    .cheek:hover {
+      box-shadow: 0 0 40px red;
+      transform: scale(1.1);
+    }
+
+    /* BOCA */
+    .mouth {
+      position: absolute;
+      bottom: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      height: 90px;
+      border-bottom: 8px solid black;
+      border-radius: 0 0 100px 100px;
+    }
+
+    /* CONTENIDO */
+    .content {
+      position: relative;
+      z-index: 1;
+      margin-top: 120vh;
+      text-align: center;
+      padding: 50px;
+      font-size: 24px;
+      color: #333;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="face" id="face">
+    <div class="eye left blink">
+      <div class="pupil"></div>
+    </div>
+
+    <div class="eye right blink">
+      <div class="pupil"></div>
+    </div>
+
+    <div class="cheek left"></div>
+    <div class="cheek right"></div>
+
+    <div class="mouth"></div>
+  </div>
+
+  <div class="content">
+    <a href="#">⚡ Pikachu ⚡</a>
+    <p>
+      Pikachu es más que un personaje para mí.  
+      Representa energía, amistad y evolución constante.
+    </p>
+    <p>
+      Desde pequeño, siempre me ha inspirado su actitud y su forma de enfrentar los retos.
+    </p>
+  </div>
+
+  <script>
+    // 👀 OJOS SIGUEN EL MOUSE
+    document.addEventListener("mousemove", (e) => {
+      const pupils = document.querySelectorAll(".pupil");
+
+      pupils.forEach((pupil) => {
+        const rect = pupil.parentElement.getBoundingClientRect();
+        const x = rect.left + rect.width / 2;
+        const y = rect.top + rect.height / 2;
+
+        const angle = Math.atan2(e.clientY - y, e.clientX - x);
+        const moveX = Math.cos(angle) * 20;
+        const moveY = Math.sin(angle) * 20;
+
+        pupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      });
+    });
+
+    // 🌀 SCROLL EFECTOS
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      const eyes = document.querySelectorAll(".eye");
+      const face = document.getElementById("face");
+
+      // ojos bajan
+      eyes.forEach((eye) => {
+        eye.style.transform = `translateY(${scrollY * 0.1}px)`;
+      });
+
+      // cara desaparece al bajar
+      face.style.opacity = 1 - scrollY / 400;
+    });
+  </script>
+
+</body>
+</html>
