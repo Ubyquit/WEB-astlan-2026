@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondo Animado y Cursor Personalizado</title>
+    <style>
+        /* 1. CONFIGURACIÓN DEL CUERPO Y FONDO ANIMADO */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+
+            /* IMAGEN DE FONDO (He puesto una de ejemplo, cámbiala por la tuya) */
+            background-image: url('./acuarela-verde-deja-patron-transparente_65186-2643.avif'); 
+            background-color: #f0f2f5; /* Color base detrás del patrón */
+            background-repeat: repeat;
+            background-attachment: fixed;
+            
+            /* ANIMACIÓN AUTOMÁTICA */
+            animation: moverFondo 60s linear infinite;
+        }
+
+        /* 2. DEFINICIÓN DEL MOVIMIENTO DEL FONDO */
+        @keyframes moverFondo {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                /* Mueve el fondo 1000px en diagonal */
+                background-position: 1000px 1000px;
+            }
+        }
+
+        /* 3. CURSOR PERSONALIZADO AL PASAR SOBRE ENLACES */
+        a, .btn-custom {
+            /* Cambia 'mano.png' por la ruta real de tu imagen */
+            cursor: url('https://flaticon.com'), pointer;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding: 20px;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background: #007bff;
+            color: white;
+        }
+
+        /* CONTENEDOR DE TEXTO */
+        .content {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <h1>Fondo en Movimiento Infinito</h1>
+        <p>El patrón de fondo se mueve automáticamente sin parar.</p>
+        <br>
+        <!-- Prueba el cursor personalizado pasando el mouse aquí -->
+        <a href="#">¡Pasa el mouse aquí para ver el cursor!</a>
+
+        <!-- El archivo de audio (hidden para que no se vea el reproductor) -->
+        <audio id="l" src="./audio/laser-gun-metal-slug-3.mp3"></audio>
+
+        <!-- La imagen que activa el sonido -->
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZOtVoKJrmZt80fdHH77NBBe8rSTiBaw6i_Q&s" 
+            alt="Haz clic aquí" 
+            onclick="document.getElementById('l').play()" 
+            style="cursor: pointer; width: 200px;">
+    </div>
+
+</body>
+</html>
