@@ -23,10 +23,42 @@
             background-attachment: fixed;
             
             /* ANIMACIÓN AUTOMÁTICA */
-            animation: moverFondo 60s linear infinite;
+            animation: moverFondo 100s linear infinite;
+        }
+
+        /* 1. CONFIGURACIÓN DEL CUERPO Y FONDO ANIMADO */
+        .fandom {
+            margin: 0;
+            padding: 0;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+
+            /* IMAGEN DE FONDO (He puesto una de ejemplo, cámbiala por la tuya) */
+            background-image: url('./fandoms.png'); 
+            background-color: #f0f2f5; /* Color base detrás del patrón */
+            background-repeat: repeat;
+            background-attachment: fixed;
+            
+            /* ANIMACIÓN AUTOMÁTICA */
+            animation: moverFandom 100s linear infinite;
         }
 
         /* 2. DEFINICIÓN DEL MOVIMIENTO DEL FONDO */
+        @keyframes moverFandom {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                /* Mueve el fondo 1000px en diagonal */
+                background-position: 1000px 0px;
+            }
+        }
+
+                /* 2. DEFINICIÓN DEL MOVIMIENTO DEL FONDO */
         @keyframes moverFondo {
             from {
                 background-position: 0 0;
@@ -70,6 +102,8 @@
 <body>
 
     <div class="content">
+        <div class="fandom" >
+        </div>
         <h1>Fondo en Movimiento Infinito</h1>
         <p>El patrón de fondo se mueve automáticamente sin parar.</p>
         <br>
@@ -84,7 +118,13 @@
             alt="Haz clic aquí" 
             onclick="document.getElementById('l').play()" 
             style="cursor: pointer; width: 200px;">
+
+                <div>
+        <div style="width: 100%;"><div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;"><iframe title="Seguridad informatica US" frameborder="0" width="1200" height="675" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genially.com/5efc1797060b3d0d6fd5e8bd" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
     </div>
+    </div>
+
+
 
 </body>
 </html>
