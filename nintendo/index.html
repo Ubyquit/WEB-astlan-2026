@@ -378,6 +378,26 @@
         
         <!-- Bootstrap JavaScript Libraries -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <!-- Cambio de fondo dinamico con scroll -->
+        <script>
+            window.addEventListener('scroll', () => {
+            // Calcula el porcentaje de scroll (0 a 1)
+            const html = document.documentElement;
+            const scrollPercent = html.scrollTop / (html.scrollHeight - html.clientHeight);
 
+            // Valores RGB de inicio (#f9e6ff)
+            const r1 = 249, g1 = 230, b1 = 255;
+            // Valores RGB de fin (#e59fff)
+            const r2 = 229, g2 = 159, b2 = 255;
+
+            // Interpola entre los dos colores
+            const r = Math.round(r1 + (r2 - r1) * scrollPercent);
+            const g = Math.round(g1 + (g2 - g1) * scrollPercent);
+            const b = Math.round(b1 + (b2 - b1) * scrollPercent);
+
+            // Aplica el nuevo color al fondo
+            document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            });
+        </script>
     </body>
 </html>
