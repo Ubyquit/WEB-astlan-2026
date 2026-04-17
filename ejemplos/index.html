@@ -20,6 +20,11 @@
             .fondo_2 {
                 background-image: url("./card2.avif");
             } 
+            .carrusel_1 {
+                background-image: url("./acuarela-verde-deja-patron-transparente_65186-2643.avif");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
         </style>
     </head>
 
@@ -40,7 +45,35 @@
                 </div>
             </div>
             <div>
-                carrusel
+                <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active carrusel_1">
+                        <div class="row">
+                            <h1>huge hermit</h1>
+                            <div class="col">
+                                <img src="./card2.avif">
+                            </div>
+                            <div class="col text-black">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae totam, earum recusandae omnis vitae commodi maxime. Quaerat, quam repudiandae? Laboriosam, eum et nisi numquam placeat expedita nobis sit tempore ipsa.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
             </div>
             <div class="fondo_2">
                 Todas las armas
