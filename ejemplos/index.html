@@ -25,6 +25,13 @@
                 background-repeat: no-repeat;
                 background-size: cover;
             }
+            .caja-flotante {
+                float: left; /* O right */
+                width: 150px;
+                height: 100px;
+                background-color: lightblue;
+                margin: 10px;
+            }
         </style>
     </head>
 
@@ -48,13 +55,15 @@
                 <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="carousel-item active carrusel_1">
-                        <div class="row">
-                            <h1>huge hermit</h1>
-                            <div class="col">
-                                <img src="./card2.avif">
-                            </div>
-                            <div class="col text-black">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae totam, earum recusandae omnis vitae commodi maxime. Quaerat, quam repudiandae? Laboriosam, eum et nisi numquam placeat expedita nobis sit tempore ipsa.
+                        <div class="container">
+                            <div class="row">
+                                <h1>huge hermit</h1>
+                                <div class="col">
+                                    <img class="imagen_bajo" src="./card2.avif">
+                                </div>
+                                <div class="col text-black">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae totam, earum recusandae omnis vitae commodi maxime. Quaerat, quam repudiandae? Laboriosam, eum et nisi numquam placeat expedita nobis sit tempore ipsa.
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -77,6 +86,10 @@
             </div>
             <div class="fondo_2">
                 Todas las armas
+            </div>
+            <div>
+                <div class="caja-flotante">Soy un objeto flotante</div>
+                <p>Este texto fluirá alrededor de la caja azul, ocupando el espacio disponible a su derecha, demostrando cómo funciona la propiedad float en CSS.</p>
             </div>
         </main>
         <footer>
